@@ -32,7 +32,7 @@ public class ApInvoiceDetailsIntentDataRepositoryImpl implements ApInvoiceDetail
 			if (!conditionQuery.equals("")) {
 				conditionQuery += " and ";
 			}
-			conditionQuery += " invoice_date = '" + apInvoiceData.getInvoiceDate() + "'";
+			conditionQuery += " invoice_date like '%" + apInvoiceData.getInvoiceDate() + "%'";
 		}
 		if (apInvoiceData.getSupplierName() != null && !apInvoiceData.getSupplierName().equals("")) {
 			if (!conditionQuery.equals("")) {
@@ -50,7 +50,7 @@ public class ApInvoiceDetailsIntentDataRepositoryImpl implements ApInvoiceDetail
 			if (!conditionQuery.equals("")) {
 				conditionQuery += " and ";
 			}
-			conditionQuery += " gl_date = '" + apInvoiceData.getGlDate() + "'";
+			conditionQuery += " gl_date like '%" + apInvoiceData.getGlDate() + "%'";
 		}
 
 		if (apInvoiceData.getPaymentNumber() != null && !apInvoiceData.getPaymentNumber().equals("")) {
@@ -63,19 +63,7 @@ public class ApInvoiceDetailsIntentDataRepositoryImpl implements ApInvoiceDetail
 			if (!conditionQuery.equals("")) {
 				conditionQuery += " and ";
 			}
-			conditionQuery += " payment_date = '" + apInvoiceData.getPaymentDate() + "'";
-		}
-		if (apInvoiceData.getInvoiceNumber() != null && !apInvoiceData.getInvoiceNumber().equals("")) {
-			if (!conditionQuery.equals("")) {
-				conditionQuery += " and ";
-			}
-			conditionQuery += " invoice_number = '" + apInvoiceData.getInvoiceNumber() + "'";
-		}
-		if (apInvoiceData.getInvoiceNumber() != null && !apInvoiceData.getInvoiceNumber().equals("")) {
-			if (!conditionQuery.equals("")) {
-				conditionQuery += " and ";
-			}
-			conditionQuery += " invoice_number = '" + apInvoiceData.getInvoiceNumber() + "'";
+			conditionQuery += " payment_date like '%" + apInvoiceData.getPaymentDate() + "%'";
 		}
 
 		if (conditionQuery.equals("")) {
